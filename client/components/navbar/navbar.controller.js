@@ -3,30 +3,25 @@
 class NavbarController {
   //start-non-standard
   menu = [{
-    'title': 'Home',
-    'state': 'main'
-  }, {
-    'title': 'Menu',
+    'title': '<i class="fa fa-cutlery"></i>',
     'state': 'menu'
   }, {
-    'title': 'Order',
+    'title': '<i class="fa fa-shopping-cart"></i>',
     'state': 'order'
   }, {
-    'title': 'News',
+    'title': '<i class="fa fa-comment"></i>',
     'state': 'news'
   }, {
-    'title': 'About',
+    'title': '<i class="fa fa-info"></i>',
     'state': 'about'
   }];
-
-  isCollapsed = true;
   //end-non-standard
 
-  constructor(Auth) {
-    this.isLoggedIn = Auth.isLoggedIn;
-    this.isAdmin = Auth.isAdmin;
-    this.getCurrentUser = Auth.getCurrentUser;
-  }
+  // constructor(Auth) {
+  //   this.isLoggedIn = Auth.isLoggedIn;
+  //   this.isAdmin = Auth.isAdmin;
+  //   this.getCurrentUser = Auth.getCurrentUser;
+  // }
 }
 
 angular.module('theCornerGuyApp')
