@@ -14,6 +14,9 @@ class NavbarController {
   }, {
     'title': 'News',
     'state': 'news'
+  }, {
+    'title': 'About',
+    'state': 'about'
   }];
 
   isCollapsed = true;
