@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/shian48263/the-corner-guy.svg?branch=master)](https://travis-ci.org/shian48263/the-corner-guy)
+
 # 轉角哥（the-corner-guy）
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.3.0.
