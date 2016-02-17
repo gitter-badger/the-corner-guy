@@ -8,6 +8,9 @@ class NavbarController {
   }, {
     'title': 'Menu',
     'state': 'menu'
+  }, {
+    'title': 'Order',
+    'state': 'order'
   }];
 
   isCollapsed = true;
