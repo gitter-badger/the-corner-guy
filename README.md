@@ -31,4 +31,6 @@ Run `grunt build` for building and `grunt serve` for preview.
 
 Running `npm test` will run the unit tests with karma.
 
+## Waffle Metrics
+
 [![Throughput Graph](https://graphs.waffle.io/shian48263/the-corner-guy/throughput.svg)](https://waffle.io/shian48263/the-corner-guy/metrics)
