@@ -1,4 +1,4 @@
-# 轉角哥（the-corner-guy）[![Build Status](https://travis-ci.org/shian48263/the-corner-guy.svg?branch=master)](https://travis-ci.org/shian48263/the-corner-guy)
+# 轉角哥（the-corner-guy）[![Build Status](https://travis-ci.org/shian48263/the-corner-guy.svg?branch=master)](https://travis-ci.org/shian48263/the-corner-guy) [![Stories in Ready](https://badge.waffle.io/shian48263/the-corner-guy.svg?label=ready&title=Ready)](http://waffle.io/shian48263/the-corner-guy)
 
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.3.0.
 
@@ -30,3 +30,5 @@ Run `grunt build` for building and `grunt serve` for preview.
 ## Testing
 
 Running `npm test` will run the unit tests with karma.
+
+[![Throughput Graph](https://graphs.waffle.io/shian48263/the-corner-guy/throughput.svg)](https://waffle.io/shian48263/the-corner-guy/metrics)
