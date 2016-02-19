@@ -213,6 +213,17 @@ body {
       }
     }
   }
+
+  .facebook-group {
+    margin-bottom: 30px;
+
+    .facebook {
+      background-color: #3B5998;
+      color: #F9F7F4;
+      border-color: #F9F7F4;
+      font-size: 4vmin;
+    }
+  }
 }
 
 // Component styles are injected through grunt

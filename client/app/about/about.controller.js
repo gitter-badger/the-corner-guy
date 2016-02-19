@@ -4,8 +4,9 @@
 
   class AboutCtrl {
 
-    constructor($http, $scope, socket, Auth) {
+    constructor($http, $scope, socket, Auth, $window) {
       this.$http = $http;
+      this.$window = $window;
       this.data = {};
       this.location = '長興街口';
       this.wait = 15;
@@ -29,6 +30,10 @@
         business: status,
         wait: this.wait
       });
+    }
+
+    redirect() {
+      this.$window.open('https://www.facebook.com/cornerbro/', '_blank');
     }
   }
 
