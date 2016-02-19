@@ -1,0 +1,114 @@
+.business-on {
+  background-color: #EBFBEA;
+}
+
+.business-off {
+  background-color: #FFE5E6;
+}
+
+.circle {
+  min-width: 70vmin;
+  min-height: 70vmin;
+  max-width: 70vmin;
+  max-height: 70vmin;
+  border: 2px solid #B6A498;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 35px;
+  margin-bottom: 30px;
+  position: relative;
+  text-align: center;
+  color: #6C5E53;
+
+  .timestamp {
+    font-size: 4vmin;
+    position: absolute;
+    top: 25%;
+    width: 100%;
+  }
+
+  .location {
+    font-size: 12vmin;
+    position: absolute;
+    top: 48%;
+    transform: translate(0, -50%);
+    width: 100%;
+  }
+
+  .wait {
+    font-size: 5.5vmin;
+    position: absolute;
+    top: 63%;
+    width: 100%;
+  }
+}
+
+.business-hour, .business-hour.disabled {
+  background-color: #B6A498;
+  color: #F9F7F4;
+  font-size: 4vmin;
+  opacity: 1;
+  border-color: #B6A498;
+  margin-bottom: 30px;
+}
+
+.location-form {
+  margin-bottom: 30px;
+
+  .form-control {
+    font-size: 4vmin;
+    height: 100%;
+    border-color: #B6A498;
+    text-align: center;
+    max-width: 60vmin;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #F9F7F4;
+    color: #6C5E53;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .input-location {
+    border-radius: 4px 4px 0 0;
+  }
+
+  .input-wait {
+    border-radius: 0 0 0 0;
+  }
+
+  .btn-group {
+    .btn {
+      font-size: 4vmin;
+      color: #6C5E53;
+      border-color: #B6A498;
+      width: 30vmin;
+    }
+
+    .btn-primary {
+      background-color: #EBFBEA;
+      border-top-left-radius: 0;
+      border-top-width: 1px;
+    }
+
+    .btn-danger {
+      background-color: #FFE5E6;
+      border-top-right-radius: 0;
+      border-top-width: 1px;
+    }
+  }
+}
+
+.facebook-group {
+  margin-bottom: 30px;
+
+  .facebook {
+    background-color: #869ECC;
+    color: #F9F7F4;
+    border-color: #F9F7F4;
+    font-size: 4vmin;
+  }
+}
