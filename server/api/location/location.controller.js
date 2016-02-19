@@ -15,6 +15,7 @@ import Location from './location.model';
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
+    console.log(entity);
     if (entity) {
       res.status(statusCode).json(entity);
     }
@@ -61,7 +62,7 @@ function handleError(res, statusCode) {
 
 // Gets a list of Locations
 export function index(req, res) {
-  Location.findAsync()
+  Location.find({}).sort('-timestamp').limit(1).execAsync()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

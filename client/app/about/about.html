@@ -1,1 +1,16 @@
-<div>This is the about view.</div>
+<div class="container">
+  <div>{{about.data[0].location}}</div>
+  <div>{{about.data[0].business}}</div>
+  <div>{{about.data[0].timestamp}}</div>
+  <div>{{about.data[0].wait}}</div>
+  <form class="location-form" ng-show="about.isAdmin()">
+    <p class="input-group">
+      <input type="text" class="form-control" placeholder="Location" ng-model="about.location">
+      <input type="text" class="form-control" placeholder="Time" ng-model="about.wait">
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary" ng-click="about.update('on')">Open</button>
+        <button type="submit" class="btn btn-danger" ng-click="about.update('off')">Close</button>
+      </span>
+    </p>
+  </form>
+</div>
