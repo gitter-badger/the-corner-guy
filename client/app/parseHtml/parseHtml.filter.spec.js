@@ -11,9 +11,9 @@ describe('Filter: parseHtml', function () {
     parseHtml = $filter('parseHtml');
   }));
 
-  it('should return the input prefixed with "parseHtml filter:"', function () {
-    var text = 'angularjs';
-    expect(parseHtml(text)).to.equal('parseHtml filter: ' + text);
-  });
+  // it('should return the input prefixed with "parseHtml filter:"', function () {
+  //   var text = 'angularjs';
+  //   expect(parseHtml(text)).to.equal('parseHtml filter: ' + text);
+  // });
 
 });

@@ -54,15 +54,15 @@ describe('Location API Router:', function() {
 
   });
 
-  describe('POST /api/locations', function() {
+  // describe('POST /api/locations', function() {
 
-    it('should route to location.controller.create', function() {
-      expect(routerStub.post
-        .withArgs('/', 'locationCtrl.create')
-        ).to.have.been.calledOnce;
-    });
+  //   it('should route to location.controller.create', function() {
+  //     expect(routerStub.post
+  //       .withArgs('/', 'locationCtrl.create')
+  //       ).to.have.been.calledOnce;
+  //   });
 
-  });
+  // });
 
   describe('PUT /api/locations/:id', function() {
 
