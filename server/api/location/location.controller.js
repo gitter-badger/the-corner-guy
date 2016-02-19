@@ -15,7 +15,6 @@ import Location from './location.model';
 function respondWithResult(res, statusCode) {
   statusCode = statusCode || 200;
   return function(entity) {
-    console.log(entity);
     if (entity) {
       res.status(statusCode).json(entity);
     }
