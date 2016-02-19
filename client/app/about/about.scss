@@ -44,15 +44,6 @@
   }
 }
 
-.business-hour, .business-hour.disabled {
-  background-color: #B6A498;
-  color: #F9F7F4;
-  font-size: 4vmin;
-  opacity: 1;
-  border-color: #B6A498;
-  margin-bottom: 30px;
-}
-
 .location-form {
   margin-bottom: 30px;
 
@@ -100,6 +91,15 @@
       border-top-width: 1px;
     }
   }
+}
+
+.business-hour, .business-hour.disabled {
+  background-color: #B6A498;
+  color: #F9F7F4;
+  font-size: 4vmin;
+  opacity: 1;
+  border-color: #B6A498;
+  margin-bottom: 30px;
 }
 
 .facebook-group {

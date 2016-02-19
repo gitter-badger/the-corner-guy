@@ -7,9 +7,6 @@
   <div class="wait" ng-show="about.data[0].business === 'on'">{{about.data[0].wait}}分鐘後可取餐</div>
   <div class="wait" ng-show="about.data[0].business === 'off'">謝謝光臨</div>
 </div>
-<div class="text-center">
-  <input class="btn btn-default business-hour disabled" type="button" value="營業時間：7PM ～ 2AM">
-</div>
 <form class="location-form text-center" ng-show="about.isAdmin()">
   <input type="text" class="form-control input-location" placeholder="地點" ng-model="about.location">
   <input type="text" class="form-control input-wait" placeholder="取餐時間" ng-model="about.wait">
@@ -18,6 +15,9 @@
     <button type="submit" class="btn btn-danger" ng-click="about.update('off')">打烊</button>
   </div>
 </form>
+<div class="text-center">
+  <input class="btn btn-default business-hour disabled" type="button" value="營業時間：7PM ～ 2AM">
+</div>
 <div class="text-center">
   <div class="btn-group facebook-group" role="group" aria-label="...">
     <button type="button" class="btn btn-default facebook" ng-click="about.redirect()"><i class="fa fa-facebook"></i></button>
