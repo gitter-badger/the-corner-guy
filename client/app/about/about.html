@@ -1,16 +1,21 @@
-<div class="container">
-  <div>{{about.data[0].location}}</div>
-  <div>{{about.data[0].business}}</div>
-  <div>{{about.data[0].timestamp}}</div>
-  <div>{{about.data[0].wait}}</div>
-  <form class="location-form" ng-show="about.isAdmin()">
-    <p class="input-group">
-      <input type="text" class="form-control" placeholder="Location" ng-model="about.location">
-      <input type="text" class="form-control" placeholder="Time" ng-model="about.wait">
-      <span class="input-group-btn">
-        <button type="submit" class="btn btn-primary" ng-click="about.update('on')">Open</button>
-        <button type="submit" class="btn btn-danger" ng-click="about.update('off')">Close</button>
-      </span>
-    </p>
-  </form>
+<div class="circle" ng-class="{'business-on': about.data[0].business === 'on', 'business-off': about.data[0].business === 'off'}">
+  <div class="timestamp">{{about.data[0].timestamp | date:'M/d h:mma'}}
+    <span ng-show="about.data[0].business === 'on'">開始</span>
+  </div>
+  <div class="location" ng-show="about.data[0].business === 'on'">{{about.data[0].location}}</div>
+  <div class="location" ng-show="about.data[0].business === 'off'">結束營業</div>
+  <div class="wait" ng-show="about.data[0].business === 'on'">{{about.data[0].wait}}分鐘後取餐</div>
+  <div class="wait" ng-show="about.data[0].business === 'off'">謝謝光臨</div>
 </div>
+<div class="text-center">
+  <input class="btn btn-default business-hour disabled" type="button" value="營業時間：7PM ～ 2AM">
+</div>
+<form class="location-form text-center" ng-show="about.isAdmin()">
+  <input type="text" class="form-control input-location" placeholder="地點" ng-model="about.location">
+  <input type="text" class="form-control input-wait" placeholder="取餐時間" ng-model="about.wait">
+  <div class="btn-group" role="group" aria-label="...">
+    <button type="submit" class="btn btn-primary" ng-click="about.update('on')">營業</button>
+    <button type="submit" class="btn btn-danger" ng-click="about.update('off')">打烊</button>
+  </div>
+</form>
+<footer></footer>
