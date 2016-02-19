@@ -3,6 +3,9 @@
 class NavbarController {
   //start-non-standard
   menu = [{
+    'title': '<i class="fa fa-info"></i>',
+    'state': 'about'
+  }, {
     'title': '<i class="fa fa-cutlery"></i>',
     'state': 'menu'
   }, {
@@ -11,9 +14,6 @@ class NavbarController {
   }, {
     'title': '<i class="fa fa-comment"></i>',
     'state': 'news'
-  }, {
-    'title': '<i class="fa fa-info"></i>',
-    'state': 'about'
   }];
   //end-non-standard
 
@@ -26,3 +26,13 @@ class NavbarController {
 
 angular.module('theCornerGuyApp')
   .controller('NavbarController', NavbarController);
+
+var height = $(window).height() - 84;
+
+$(".main").height(height);
+
+window.onresize = function(event) {
+var height = $(window).height() - 84;
+
+$(".main").height(height);
+};
