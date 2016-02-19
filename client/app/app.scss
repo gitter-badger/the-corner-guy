@@ -15,16 +15,14 @@ $fa-font-path: "../bower_components/font-awesome/fonts";
   padding: 0.2em 0;
 }
 
-body {
-  overflow: hidden;
-
-  .scrollbar {
-    margin-top: 84px;
-    overflow-y: scroll;
-  }
+body::-webkit-scrollbar {
+  display: none;
 }
 
-.navbar {
+body {
+  padding-top: 84px;
+
+  .navbar {
   .container-fluid{
     background-color: #6c5e53;
 
@@ -105,6 +103,7 @@ body {
       }
     }
   }
+}
 }
 
 // Component styles are injected through grunt

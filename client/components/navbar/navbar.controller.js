@@ -26,13 +26,3 @@ class NavbarController {
 
 angular.module('theCornerGuyApp')
   .controller('NavbarController', NavbarController);
-
-var height = $(window).height() - 84;
-
-$(".main").height(height);
-
-window.onresize = function(event) {
-var height = $(window).height() - 84;
-
-$(".main").height(height);
-};
