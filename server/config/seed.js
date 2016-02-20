@@ -45,12 +45,14 @@ User.find({}).removeAsync()
       provider: 'local',
       name: 'Test User',
       email: 'test@example.com',
+      phone: '0900000000',
       password: 'test'
     }, {
       provider: 'local',
       role: 'admin',
       name: 'Admin',
       email: 'admin@example.com',
+      phone: '0900000000',
       password: 'admin'
     })
     .then(() => {

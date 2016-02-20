@@ -1,1 +1,141 @@
-<div>This is the user view.</div>
+<div ng-hide="user.isLoggedIn">
+  <div class="container">
+    <div class="login-signup">
+      <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default" ng-class="{active: user.active}" ng-click="user.toggle('login')">Login</button>
+        <button type="button" class="btn btn-default" ng-class="{active: !user.active}" ng-click="user.toggle('signup')">Signup</button>
+      </div>
+    </div>
+    <div class="container" ng-show="user.active">
+      <div class="row">
+        <div class="col-sm-10 col-xs-10 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3 col-lg-offset-3">
+          <form class="form" name="loginForm" ng-submit="user.loginSubmit(loginForm)" novalidate>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" ng-model="user.login.user.email" required placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" name="password" class="form-control" ng-model="user.login.user.password" required placeholder="Password">
+            </div>
+            <div class="form-group has-error">
+              <p class="help-block" ng-show="(loginForm.email.$error.required  && user.login.submitted) || (loginForm.password.$error.required && user.login.submitted)">
+                Please enter your email and password.
+              </p>
+              <p class="help-block" ng-show="loginForm.email.$error.email && user.login.submitted">
+                Please enter a valid email.
+              </p>
+              <p class="help-block">{{ user.login.errors.other }}</p>
+            </div>
+            <div class="btn-submit-parent">
+              <button class="btn btn-inverse btn-lg btn-login btn-submit" type="submit">
+                Submit
+              </button>
+            </div>
+            <!-- <hr/>
+          <div class="row">
+            <div class="col-sm-4 col-md-3">
+              <oauth-buttons classes="btn-block"></oauth-buttons>
+            </div>
+          </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="container" ng-hide="user.active">
+      <div class="row">
+        <div class="col-sm-10 col-xs-10 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3 col-lg-offset-3">
+          <form class="form" name="form" ng-submit="vm.register(form)" novalidate>
+            <div class="form-group" ng-class="{ 'has-success': form.email.$valid && vm.submitted,
+                                              'has-error': form.email.$invalid && vm.submitted }">
+              <input type="email" name="email" class="form-control" ng-model="vm.user.email" required mongoose-error placeholder="Email">
+              <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
+                Doesn't look like a valid email.
+              </p>
+              <p class="help-block" ng-show="form.email.$error.required && vm.submitted">
+                What's your email address?
+              </p>
+              <p class="help-block" ng-show="form.email.$error.mongoose">
+                {{ vm.errors.email }}
+              </p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-success': form.phone.$valid && vm.submitted,
+                                              'has-error': form.phone.$invalid && vm.submitted }">
+              <input type="text" name="phone" class="form-control" ng-model="vm.user.phone" required placeholder="Phone">
+              <p class="help-block" ng-show="form.phone.$error.required && vm.submitted">
+                A phone is required
+              </p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
+                                              'has-error': form.name.$invalid && vm.submitted }">
+              <input type="text" name="name" class="form-control" ng-model="vm.user.name" required placeholder="Name">
+              <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
+                A name is required
+              </p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-success': form.password.$valid && vm.submitted,
+                                              'has-error': form.password.$invalid && vm.submitted }">
+              <input type="password" name="password" class="form-control" ng-model="vm.user.password" ng-minlength="3" required mongoose-error placeholder="Password">
+              <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && vm.submitted">
+                Password must be at least 3 characters.
+              </p>
+              <p class="help-block" ng-show="form.password.$error.mongoose">
+                {{ vm.errors.password }}
+              </p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-success': form.confirmPassword.$valid && vm.submitted,
+                                              'has-error': form.confirmPassword.$invalid && vm.submitted }">
+              <input type="password" name="confirmPassword" class="form-control" ng-model="vm.user.confirmPassword" match="vm.user.password" ng-minlength="3" required placeholder="Confirm password">
+              <p class="help-block" ng-show="form.confirmPassword.$error.match && vm.submitted">
+                Passwords must match.
+              </p>
+            </div>
+            <div class="btn-submit-parent">
+              <button class="btn btn-inverse btn-lg btn-register btn-submit" type="submit">
+                Submit
+              </button>
+            </div>
+            <!-- <hr/>
+          <div class="row">
+            <div class="col-sm-4 col-md-3">
+              <oauth-buttons classes="btn-block"></oauth-buttons>
+            </div>
+          </div> -->
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-show="user.isLoggedIn">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-xs-10 col-md-6 col-lg-6 col-xs-offset-1 col-sm-offset-1 col-md-offset-3 col-lg-offset-3">
+        <div class="col-sm-12">
+          <form class="form" name="form" ng-submit="vm.changePassword(form)" novalidate>
+            <div class="form-group">
+              <input type="password" name="password" class="form-control" ng-model="vm.user.oldPassword" mongoose-error placeholder="Old Password">
+              <p class="help-block" ng-show="form.password.$error.mongoose">
+                {{ vm.errors.other }}
+              </p>
+            </div>
+            <div class="form-group">
+              <input type="password" name="newPassword" class="form-control" ng-model="vm.user.newPassword" ng-minlength="3" required placeholder="New Password">
+              <p class="help-block" ng-show="(form.newPassword.$error.minlength || form.newPassword.$error.required) && (form.newPassword.$dirty || vm.submitted)">
+                Password must be at least 3 characters.
+              </p>
+            </div>
+            <div class="form-group">
+              <input type="password" name="confirmPassword" class="form-control" ng-model="vm.user.confirmPassword" match="vm.user.newPassword" ng-minlength="3" required="" placeholder="Confirm New Password">
+              <p class="help-block" ng-show="form.confirmPassword.$error.match && vm.submitted">
+                Passwords must match.
+              </p>
+            </div>
+            <p class="help-block"> {{ vm.message }} </p>
+            <div class="btn-submit-parent">
+              <button class="btn btn-lg btn-primary btn-submit" type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,6 +6,7 @@ angular.module('theCornerGuyApp')
       .state('user', {
         url: '/user',
         templateUrl: 'app/user/user.html',
-        controller: 'UserCtrl'
+        controller: 'UserCtrl',
+        controllerAs: 'user'
       });
   });

@@ -13,6 +13,7 @@ describe('User API:', function() {
       user = new User({
         name: 'Fake User',
         email: 'test@example.com',
+        phone: '0900000000',
         password: 'password'
       });
 

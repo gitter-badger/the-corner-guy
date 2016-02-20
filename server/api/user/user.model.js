@@ -12,6 +12,7 @@ var UserSchema = new Schema({
     type: String,
     lowercase: true
   },
+  phone: String,
   role: {
     type: String,
     default: 'user'
@@ -63,6 +64,16 @@ UserSchema
     return email.length;
   }, 'Email cannot be blank');
 
+// Validate empty phone
+UserSchema
+  .path('phone')
+  .validate(function(phone) {
+    if (authTypes.indexOf(this.provider) !== -1) {
+      return true;
+    }
+    return phone.length;
+  }, 'Phone cannot be blank');
+
 // Validate empty password
 UserSchema
   .path('password')
@@ -93,9 +104,31 @@ UserSchema
       });
   }, 'The specified email address is already in use.');
 
+// Validate phone is not taken
+UserSchema
+  .path('phone')
+  .validate(function(value, respond) {
+    var self = this;
+    return this.constructor.findOneAsync({ phone: value })
+      .then(function(user) {
+        if (user) {
+          if (self.id === user.id) {
+            return respond(true);
+          }
+          return respond(false);
+        }
+        return respond(true);
+      })
+      .catch(function(err) {
+        throw err;
+      });
+  }, 'The specified phone address is already in use.');
+
 var validatePresenceOf = function(value) {
   return value && value.length;
 };
+
+
 
 /**
  * Pre-save hook
