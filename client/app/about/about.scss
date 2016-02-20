@@ -59,7 +59,9 @@
   }
 
   .form-control:focus {
-    box-shadow: none;
+    box-shadow: inset 0 1px 1px #B6A498, 0 0 8px #B6A498;
+    border-color: #6C5E53;
+    outline: 0;
   }
 
   .input-location {
@@ -76,6 +78,10 @@
       color: #6C5E53;
       border-color: #B6A498;
       width: 30vmin;
+    }
+
+    .btn:active {
+      border-color: #6C5E53;
     }
 
     .btn-primary {
