@@ -15,14 +15,14 @@ function authInterceptor($rootScope, $q, $cookies, $injector, Util) {
     },
 
     // Intercept 401s and redirect you to login
-    responseError(response) {
-      if (response.status === 401) {
-        (state || (state = $injector.get('$state'))).go('login');
-        // remove any stale tokens
-        $cookies.remove('token');
-      }
-      return $q.reject(response);
-    }
+    // responseError(response) {
+    //   if (response.status === 401) {
+    //     (state || (state = $injector.get('$state'))).go('login');
+    //     // remove any stale tokens
+    //     $cookies.remove('token');
+    //   }
+    //   return $q.reject(response);
+    // }
   };
 }
 
