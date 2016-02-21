@@ -29,7 +29,7 @@ var all = {
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'the-corner-guy-secret'
+    session: process.env.JWT_SECRET || 'the-corner-guy-secret'
   },
 
   // MongoDB connection options
