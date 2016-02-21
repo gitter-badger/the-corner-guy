@@ -41,7 +41,7 @@ export function create(req, res, next) {
   newUser.saveAsync()
     .spread(function(user) {
       var token = jwt.sign({ _id: user._id }, config.secrets.session, {
-        expiresIn: 60 * 60 * 5
+        expiresIn: 60 * 60 * 24 * 365 * 100
       });
       res.json({ token });
     })

@@ -3,7 +3,7 @@
 angular.module('theCornerGuyApp.auth', [
   'theCornerGuyApp.constants',
   'theCornerGuyApp.util',
-  'ngCookies',
+  'ngStorage',
   'ui.router'
 ])
   .config(function($httpProvider) {

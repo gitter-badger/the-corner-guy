@@ -4,7 +4,6 @@ angular.module('theCornerGuyApp', [
   'theCornerGuyApp.auth',
   'theCornerGuyApp.admin',
   'theCornerGuyApp.constants',
-  'ngCookies',
   'ngResource',
   'ngSanitize',
   'btford.socket-io',
