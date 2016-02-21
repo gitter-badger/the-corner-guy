@@ -1,5 +1,7 @@
 # 轉角哥（the-corner-guy）[![Build Status](https://travis-ci.org/shian48263/the-corner-guy.svg?branch=master)](https://travis-ci.org/shian48263/the-corner-guy) [![Stories in Ready](https://badge.waffle.io/shian48263/the-corner-guy.svg?label=ready&title=Ready)](http://waffle.io/shian48263/the-corner-guy)
 
+[![Join the chat at https://gitter.im/shian48263/the-corner-guy](https://badges.gitter.im/shian48263/the-corner-guy.svg)](https://gitter.im/shian48263/the-corner-guy?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.3.0.
 
 ## Getting Started
